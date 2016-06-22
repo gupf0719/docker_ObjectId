@@ -8,7 +8,7 @@ RUN apt-get install -y mongodb-org
 
 #bongo 配置
 RUN mkdir -p /data/bin
-ENV Db_PATH data/bin
+ENV Db_PATH /data/bin
 
 #项目 ObjectId 配置
 ENV ObjectId_PATH $GOPATH/src/ObjectId
