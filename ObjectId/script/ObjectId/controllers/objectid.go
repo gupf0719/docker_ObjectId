@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	"fmt"
-	"encoding/json"
 	"ObjectId/models"
+	"encoding/json"
 
 	"github.com/astaxie/beego"
 )
@@ -17,16 +16,15 @@ func (c *MainController) Post() {
 	callback_data := make(map[string]interface{}) //返回数据
 
 	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
-	fmt.Println(c.Ctx.Input.RequestBody)
-	fmt.Println(params["username"].(string))
+
 	user_name := params["username"].(string)
 
 	//插入数据
-	objectid, err := models.InstertUname(user_name)
+	object_id, err := models.InstertUname(user_name)
 
 	//返回数据
 	if err == nil {
-		callback_data["objectid"] = objectid
+		callback_data["object_id"] = object_id
 
 		rdata, err := json.Marshal(callback_data)
 		json.Unmarshal(rdata, callback_data)

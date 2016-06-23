@@ -7,4 +7,7 @@ import (
 
 func init() {
     beego.Router("/getobjectid", &controllers.MainController{})
+
+	beego.Router("/adduserinfo", &controllers.AddUserInfoController{})
+	beego.Router("/getuserinfo", &controllers.GetUserInfoController{})
 }

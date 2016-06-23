@@ -11,19 +11,6 @@ type User struct {
 	User_name string
 }
 
-
-//func init(){
-//	session, err := mgo.Dial(URL) //连接数据库
-//	if err != nil {
-//		panic(err)
-//	}
-//	defer session.Close()
-//	session.SetMode(mgo.Monotonic, true)
-
-//	db := session.DB("user")     //数据库名称
-//	collection := db.C("user") //如果该集合已经存在的话，则直接返回
-//}
-
 //*******插入User*******
 func InstertUname(user_name string) (string, error) {
 	session, err := mgo.Dial(beego.AppConfig.String("url")) //连接数据库
